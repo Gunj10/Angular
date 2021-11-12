@@ -1,1 +1,41 @@
-<p>pipes-demo works!</p>
+<h1>
+    Pipes Demo
+</h1>
+
+<h3> Date Pipes </h3>
+    <p>
+        Original date : {{ todaysdate }}
+        <br>
+        Original date using pipe : {{ todaysdate | date }}
+        <br>
+        Original date using parameterized pipe short : {{ todaysdate | date: 'short' }}
+        <br>
+        Original date using parameterized pipe long : {{ todaysdate | date: 'long' }}
+    </p>
+
+<h3> Currency Pipes </h3>
+    <p>
+        Default is US dollar
+        {{ 5 | currency }}
+    <br>
+        When used as EUR
+        {{ 5 | currency: 'EUR' }}
+    <br>
+        When used as INR
+        {{ 5 | currency: 'INR' }}
+    </p>
+
+<h3> Custom Pipes </h3>    
+    <p> 
+        Custome pipe : rupee 
+        <br>
+        {{ 4 | rupee}}
+    </p>
+
+<h3> Add numbers to array </h3> 
+    <p> Current number array : {{numArray}} </p>
+    <p>
+        <input [(ngModel)]="newNumArray" name="" type = 'number' > <br>  
+        <button (click)='addValue()' > Add </button>
+    </p>
+    <p> New number array : {{newNumArray}} </p>

@@ -10,8 +10,13 @@
           "style": "scss"
         },
         "@schematics/angular:application": {
-          "strict": true
-        }
+          "strict": false
+        },
+        "@schematics/angular:class":{},
+        "@schematics/angular:componnt":{},
+        "@schematics/angular:directive":{},
+        "@schematics/angular:data-binding":{},
+        "@schematics/angular:pipes":{}
       },
       "root": "",
       "sourceRoot": "src",

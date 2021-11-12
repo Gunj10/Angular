@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DataBindingDemoComponent } from './components/data-binding-demo/data-binding-demo.component';
 import { MainRoutingModule } from './main-routing.module';
+import { TypescriptDemoComponent } from './components/typescript-demo/typescript-demo.component';
 
 
 @NgModule({
   declarations: [
-    DataBindingDemoComponent
+    // DataBindingDemoComponent,
+    TypescriptDemoComponent
   ],
   imports: [
     CommonModule,

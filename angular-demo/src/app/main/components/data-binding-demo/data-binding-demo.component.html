@@ -1,1 +1,66 @@
 <p>data-binding-demo works!</p>
+
+<h3>String Interpolation</h3>
+{{ 3 + 5}}
+
+<h3>One Way Data Binding</h3>
+{{oneWayDataBinding}}
+
+<h3>Two Way Data Binding</h3>
+{{twoWayDataBinding}}
+
+<br> 
+<!-- using ngModel -->
+<input [(ngModel)]="twoWayDataBinding" name= 'twoway' type="text">
+
+<h3>Property or Attribute binding</h3>
+<input [type] ="typeBinding1"><br>
+<input [type] ="typeBinding2"><br>
+<input [type] ="typeBinding3">
+
+<h3>Style binding</h3>
+    <p style="color: brown;">
+        This is for style binding
+    </p>
+
+    <p [ngStyle]="{'color': 'violet'}">
+        This is for ngstyle binding
+    </p>
+
+<h3>Conditional Style binding</h3>
+    <p [style.color] = "isStyleTrue? 'blue' : 'red'"> 
+        This is for conditional style binding
+    </p>
+
+    <p [ngStyle]="isStyleTrue? {'color': 'green'} : {'color': 'pink'}"> 
+        This is for conditional ngstyle binding
+    </p>
+
+<h3>Class binding</h3>
+    <p class="font-21">
+        This is for class binding.
+    </p>
+
+<h3>Conditional Class binding</h3>    
+    <p [class.font21]="isClassValue == 'success'">
+        This is for conditional class binding.
+    </p>
+    <p [ngClass]="{'font21': isClassValue == 'success'}">
+        This is for ngclass binding.
+    </p>
+    <p [ngClass]="{'font21': isClassValue == 'success', 'font31': isStyleTrue}">
+        This is for multiple class binding.
+    </p>
+
+<h3>Event Class binding</h3> 
+    <button (click)="changeAllValues()">
+        Changes all values 
+    </button>
+    <br>
+    <button (dblclick)="changeAllValues()">
+        Changes all values on double click
+    </button>
+    <br>
+    <button (ngkeyup)="changeAllValues()">
+        Changes all values on Key up
+    </button>

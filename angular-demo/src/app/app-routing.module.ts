@@ -13,6 +13,11 @@ const routes: Routes = [
   children: [
    {
      path : '',
+     redirectTo : 'directives-demo',
+     pathMatch : 'full'
+   },
+    {
+     path : '',
      loadChildren: () => import('./main/main.module').then(x => x.MainModule)
    }
 

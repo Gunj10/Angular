@@ -1,1 +1,78 @@
-<p>directives-demo works!</p>
+<h1>
+    Directives Demo
+</h1>
+<p>
+•	To register directives we use @Directive meta-data annotation. <br>
+•	Directive is used to add behavior to an existing DOM element. <br>
+•	Directive is use to design re-usable components. <br>
+•	Many directives can be used per DOM element. <br>
+•	Directive doesn't use View.
+</p>
+
+<h2> Structural Directive </h2>
+  <p>
+    ngIf <br>
+    ngFor <br>
+    ngSwitch
+  </p>
+    
+    <h3> ngIf directives </h3>
+        <div class="border-box">
+            <p *ngIf="true">
+                Used true of false values, <br>
+                Used to hide or show DOM elements.
+            </p>
+        </div>
+        
+        <div class="border-box">
+            <p *ngIf="isactive">
+                Used variable to show true of false values, <br>
+                Used to hide or show DOM elements.
+            </p>
+        </div>
+        
+        <div appHighlight class="border-box">
+            <p *ngIf="isActivemethod()">
+                Used method to show true of false values, <br>
+                Used to hide or show DOM elements.
+            </p>
+        </div>
+
+    <h3> ngFor directives </h3>
+        <p *ngFor="let item of items; let i=index">
+            {{i + 1}} {{item}}
+        </p>
+
+    <h3> ngSwitch directives </h3>
+        <ul [ngSwitch]="numbers">
+            <li *ngSwitchCase="1">One</li>
+            <li *ngSwitchCase="2">Two</li>
+            <li *ngSwitchCase="3">Three</li>
+            <li *ngSwitchCase="4">Four</li>
+            <li *ngSwitchCase="5">Five</li>
+            <li *ngSwitchDefault>Default</li>
+        </ul>
+
+    <h3> ngIfElse directives </h3>
+        <div class="border-box" *ngIf="loggedIn; else loggedOut">
+            User is logged IN.
+        </div>
+        <ng-template #loggedOut>
+            User is logged OUT.
+        </ng-template>
+
+    <h3> ngIfThenElse directives </h3>
+        <div class="border-box">
+        <div *ngIf="welcome; then welcomeT;  else welcomeF">  </div>
+            <ng-template #welcomeT>
+                Welcome!!
+            </ng-template>
+            <ng-template #welcomeF>
+                BYE!!
+            </ng-template>
+        </div>
+
+<h3> Highted using custom directive </h3>
+    <p appHighlight>
+        Highlted
+    </p>
