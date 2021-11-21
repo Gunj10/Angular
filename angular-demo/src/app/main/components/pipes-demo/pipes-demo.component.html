@@ -1,8 +1,18 @@
-<h1>
-    Pipes Demo
-</h1>
+<h1> Pipes </h1> <br>
+<p>
+    Pipes are simple functions to use in template expressions to accept an input value and return a transformed value. <br>
+    Pipes are useful because you can use them throughout your application, while only declaring each pipe once,<br>
+    Use pipes to transform strings, currency amounts, dates, and other data for display. <br>
+</p>
 
 <h3> Date Pipes </h3>
+<!-- SYNTAX: {{ value_expression | date [ : format [ : timezone [ : locale ] ] ] }}
+    format	    string	Optional, Default is 'mediumDate'.
+
+    timezone	string	Optional, Default is undefined.
+
+    locale	    string	Optional, Default is undefined.
+-->
     <p>
         Original date : {{ todaysdate }}
         <br>
@@ -10,10 +20,15 @@
         <br>
         Original date using parameterized pipe short : {{ todaysdate | date: 'short' }}
         <br>
+        Original date using parameterized pipe medium : {{ todaysdate | date: 'medium' }}
+        <br>
         Original date using parameterized pipe long : {{ todaysdate | date: 'long' }}
+        <br>
+        Original date using parameterized pipe full : {{ todaysdate | date: 'full' }}
     </p>
 
 <h3> Currency Pipes </h3>
+<!-- SYNTAX : {{ value_expression | currency [ : currencyCode [ : display [ : digitsInfo [ : locale ] ] ] ] }} -->
     <p>
         Default is US dollar
         {{ 5 | currency }}
@@ -23,7 +38,46 @@
     <br>
         When used as INR
         {{ 5 | currency: 'INR' }}
+    </p>        
+
+<h3> Uppercase and Lowercase Pipes </h3> 
+<!-- SYNTAX:
+    {{ value_expression | uppercase }}
+    {{ value_expression | lowercase }}        -->
+    <p>
+        When used as uppercase: 
+        {{ 'Text is Uppercase' | uppercase }}
+    <br>
+        When used as lowercase: 
+        {{ 'Text is Lowercase' | lowercase }}
     </p>
+
+<h3> Decimal Pipes </h3>
+<!-- SYNTAX:  {{ value_expression | number [ : digitsInfo [ : locale ] ] }} 
+    digitsInfo	string	Sets digit and decimal representation, Optional. Default is undefined.
+
+    locale	string	Specifies what locale format rules to use, Optional. Default is undefined.
+-->
+    <p>
+        No specified formatting:
+        {{pi | number}}    
+        <br>
+        With digitsInfo parameter specified:
+        {{pi | number:'4.1-5'}}    
+        <br>
+        With digitsInfo and locale parameters specified:
+        {{pi | number:'4.1-5':'en'}}
+    </p>    
+
+<h3> Percentage Pipes </h3>
+<!-- SYNTAX:  {{ value_expression | percent [ : digitsInfo [ : locale ] ] }}-->
+    <p>
+        No specified formatting:
+        {{1.2 | percent}}    
+        <br>
+        With digitsInfo parameter specified:
+        {{12.12345 | percent:'4.1-5'}}
+    </p>    
 
 <h3> Custom Pipes </h3>    
     <p> 
@@ -35,7 +89,18 @@
 <h3> Add numbers to array </h3> 
     <p> Current number array : {{numArray}} </p>
     <p>
-        <input [(ngModel)]="newNumArray" name="" type = 'number' > <br>  
-        <button (click)='addValue()' > Add </button>
+        <input [(ngModel)]="newNumArray" name= "newnumber" type="number">
+
+        <button (click)= "onclick()" > Add </button>
     </p>
     <p> New number array : {{newNumArray}} </p>
+
+<h3> Pure pipe </h3> 
+    <p> 
+        Pure Sort number array : {{numArray | pureSort }} 
+    </p>
+
+<h3> ImPure pipe </h3> 
+    <p> 
+        Impure Sort number array : {{numArray | impureSort }} 
+    </p>

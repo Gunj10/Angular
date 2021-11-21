@@ -26,16 +26,17 @@ const routes: Routes = [
     loadChildren: () => import('./components/pipes-demo/pipes-demo.module').then(x => x.PipesDemoModule)  
   },
   {
+    path : 'material-demo',
+    // component : MaterialDemoComponent,
+    loadChildren: () => import('./components/material-demo/material-demo.module').then(x => x.MaterialDemoModule)  
+  },
+  {
     path : 'typescript-demo',
     component : TypescriptDemoComponent,
   },
   {
     path : 'flex-layout-demo',
     component : FlexLayoutDemoComponent,
-  },
-  {
-    path : 'material-demo',
-    component : MaterialDemoComponent,
   }
 ]  
 @NgModule({

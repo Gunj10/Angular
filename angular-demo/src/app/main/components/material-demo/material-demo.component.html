@@ -1,1 +1,147 @@
-<p>material-demo works!</p>
+<h1>Material</h1>
+
+<h2 style="background-color: powderblue;" > Buttons using Material demo</h2>
+<p>
+    <button mat-raised-button>Basic</button>
+    <button mat-raised-button color="primary">Primary</button>
+    <button mat-raised-button color="accent">Accent</button>
+    <button mat-raised-button color="warn">Warn</button>
+    <button mat-raised-button disabled>Disabled</button>
+    <a mat-raised-button href="https://www.google.com/" target="_blank">Link</a>
+</p>
+
+<h2 style="background-color: powderblue;" > Cards using Material demo</h2>    
+    <mat-card>
+        <mat-card-title>Actions Buttons</mat-card-title>
+        <mat-card-subtitle>Start</mat-card-subtitle>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <br>
+      <mat-card>
+        <mat-card-title>Actions Buttons</mat-card-title>
+        <mat-card-subtitle>End</mat-card-subtitle>
+        <mat-card-actions align="end">
+          <button mat-button>Like</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+
+<h2 style="background-color: powderblue;"> Autocomplete using Material demo</h2>  
+
+<form class="example-form">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Number</mat-label>
+      <input type="text"
+             placeholder="Pick one"
+             aria-label="Number"
+             matInput
+             
+             [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <!-- [formControl]="myControl" -->
+
+<h2 style="background-color: powderblue;"> Badge using Material demo</h2>            
+  <p>
+    <span matBadge="4" matBadgeOverlap="false">Text with a badge</span>
+  </p>
+  
+  <p>
+      <span matBadge="1" matBadgeSize="large">Text with large badge</span>
+  </p>
+  
+  <p>
+    Button with a badge on the left
+    <button mat-raised-button color="primary"
+        matBadge="8" matBadgePosition="before" matBadgeColor="accent">
+      Action
+    </button>
+  </p>
+  
+  <!-- <p>
+      Button toggles badge visibility
+      <button mat-raised-button matBadge="7" [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()">
+          Hide
+      </button>
+  </p> -->
+
+  <h2 style="background-color: powderblue;"> Expansion Panels using Material demo</h2>            
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Personal data
+        </mat-panel-title>
+        <mat-panel-description>
+          Type your name and age
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>First name</mat-label>
+        <input matInput>
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" min="1">
+      </mat-form-field>
+  
+    </mat-expansion-panel>
+
+<h2 style="background-color: powderblue;"> Bottom Sheet using Material demo</h2>            
+  <p>You have received a file called "cat-picture.jpeg".</p>
+
+  <!-- <button mat-raised-button (click)="openBottomSheet()">Open file</button> -->
+  
+
+<h2 style="background-color: powderblue;"> Chips using Material demo</h2>            
+<mat-chip-list
+  class="example-chip"
+  cdkDropList 
+  cdkDropListOrientation="horizontal"
+  (cdkDropListDropped)="drop($event)">
+  <mat-chip
+    class="example-box"
+    cdkDrag
+    *ngFor="let vegetable of vegetables">
+    {{vegetable.name}}
+  </mat-chip>
+</mat-chip-list>
+
+<h2 style="background-color: powderblue;"> Dialog box using Material demo</h2>            
+  <ol>
+    <li>
+      <mat-form-field appearance="fill">
+        <mat-label>What's your name?</mat-label>
+        <input matInput [(ngModel)]="name">
+      </mat-form-field>
+    </li>
+    <li>
+      <button mat-raised-button (click)="openDialog()">Pick one</button>
+    </li>
+    <li *ngIf="animal">
+      You chose: <i>{{animal}}</i>
+    </li>
+  </ol>
+
+<h2 style="background-color: powderblue;"> Drag and Drop</h2>              
+  <div class="example-box" cdkDragLockAxis="y" cdkDrag>
+    I can only be dragged up/down
+  </div>
+  <br>
+  <div class="example-box" cdkDragLockAxis="x" cdkDrag>
+    I can only be dragged left/right
+  </div>
+
+  <h2 style="background-color: powderblue;"> Confirmation popup </h2> 
+  <button mat-raised-button (click)="saveForm()"> Save</button>

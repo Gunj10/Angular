@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PipesDemoComponent implements OnInit {
   todaysdate = new Date();
-  numArray : number[] = [1,2,3,4]; 
+  numArray : number[] = [1,2,7,4,8,56,12,33]; 
   newNumArray : number; 
+  pi: number = 3.14159265359;
   
   constructor() { }
   
@@ -16,11 +17,14 @@ export class PipesDemoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addValue() {
-    if (this.newNumArray) {
-      this.numArray.push (this.newNumArray);
-      this.newNumArray = undefined;
-      console.log (this. numArray)
-    }
+  onclick() {
+    // addValue() {
+      if (this.newNumArray) {
+        this.numArray.push (this.newNumArray);
+        this.newNumArray = undefined;
+        console.log (this. numArray)
+      }
+    // }
   }
+  
 }

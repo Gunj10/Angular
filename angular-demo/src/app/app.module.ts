@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FullLayoutComponent } from './main/components/full-layout/full-layout.component';
 import { BlankLayoutComponent } from './main/components/blank-layout/blank-layout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { BlankLayoutComponent } from './main/components/blank-layout/blank-layou
   ],  
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

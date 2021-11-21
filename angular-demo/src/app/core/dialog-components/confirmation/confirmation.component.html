@@ -1,0 +1,15 @@
+<h1 mat-dialog-title> {{header}} </h1>
+<div mat-dialog-content>
+    <p>
+        {{content}}
+    </p>
+</div>
+
+<div mat-dialog-actions>
+    <button mat-button *ngIf = "isOkTrue" (click) = "close()"> Ok </button>
+    <button mat-button *ngIf = "!isOkTrue" (click) = "close()"> Yes </button>
+    <button *ngIf = "!isOkTrue" mat-button > No </button>    
+</div>
+
+
+

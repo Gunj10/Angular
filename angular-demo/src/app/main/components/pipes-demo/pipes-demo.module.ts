@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PipesDemoComponent } from './pipes-demo.component';
 import { PipesDemoRoutingModule } from './pipes-demo-routing.module';
 import { CoreModule } from 'src/app/core/core.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { CoreModule } from 'src/app/core/core.module';
   imports: [
     CommonModule,
     PipesDemoRoutingModule,
-    CoreModule
+    CoreModule,
+    FormsModule
   ]
 })
 export class PipesDemoModule { }

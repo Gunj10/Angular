@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationComponent } from 'src/app/core/dialog-components/confirmation/confirmation.component';
 
 @Component({
   selector: 'app-data-binding-demo',
@@ -14,8 +16,9 @@ export class DataBindingDemoComponent implements OnInit {
   typeBinding3 = 'File';
   isStyleTrue : Boolean = true;
   isClassValue : string = 'success';
-
+  
   constructor() { }
+  // constructor( private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -24,5 +27,19 @@ export class DataBindingDemoComponent implements OnInit {
     this.isStyleTrue = !this.isStyleTrue;
     alert ('hello')
   }
+
+  // saveForm() {
+  //   const dialogRef = this.dialog.open (ConfirmationComponent, {width : '250px'});
+
+  //   //send data
+  //   dialogRef.componentInstance.header = "Hello from Data Binding demo"
+  //   dialogRef.componentInstance.content = "Click to save"
+  //   dialogRef.componentInstance.isOkTrue = false;
+
+  //   //receive data
+  //   dialogRef.afterClosed().subscribe(res => {
+  //     console.log (res);
+  //   } )
+  // }
 
 }
