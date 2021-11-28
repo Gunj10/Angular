@@ -31,13 +31,24 @@ const routes: Routes = [
     loadChildren: () => import('./components/material-demo/material-demo.module').then(x => x.MaterialDemoModule)  
   },
   {
-    path : 'typescript-demo',
-    component : TypescriptDemoComponent,
+    path : 'flex-layout-demo',
+    // component : FlexLayoutDemoComponent,
+    loadChildren: () => import('./components/flex-layout-demo/flex-layout-demo.module').then(x => x.FlexLayoutDemoModule)  
   },
   {
-    path : 'flex-layout-demo',
-    component : FlexLayoutDemoComponent,
-  }
+    path : 'parent-demo',
+    // component : FlexLayoutDemoComponent,
+    loadChildren: () => import('./components/parent-demo/parent-demo.module').then(x => x.ParentDemoModule)  
+  },
+  {
+    path : 'service-demo',
+    // component : FlexLayoutDemoComponent,
+    loadChildren: () => import('./components/services-demo/services-demo.module').then(x => x.ServicesDemoModule)  
+  },
+  {
+    path : 'typescript-demo',
+    component : TypescriptDemoComponent,
+  }  
 ]  
 @NgModule({
   declarations: [],

@@ -23,12 +23,16 @@ export class TypescriptDemoComponent implements OnInit {
     {
       id: 1,
       name: 'TEST1',
-      address: 'Street1'
+      address: 'Street1',
+      username: 'TEST',
+      password: 'test1'
     },
     {
       id: 2,
       name: 'TEST2',
-      address: 'Street2'
+      address: 'Street2',
+      username: 'TEST',
+      password: 'test1'
     }
   ];
   

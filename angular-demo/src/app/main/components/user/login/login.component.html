@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div class="width">
+    <h1> Login Form</h1>
+</div>
+
+<div fxFlex= "100" fxLayout="row wrap" fxLayoutAlign="center center">
+    <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <mat-form-field flex='50' fxLayout="row wrap" fxLayoutAlign="center center">
+            <input matInput autocomplete="off" placeholder="Username" name="userr" #userr="ngModel" 
+              [(ngModel)]="employee.username" required>
+            <div *ngIf="f.submitted && userr.invalid" class="invalid-feedback" >
+                <div *ngIf="userr.errors.required"> Username required </div>
+            </div>  
+        </mat-form-field>
+
+        <mat-form-field flex='50' fxLayout="row wrap" fxLayoutAlign="center center">
+            <input matInput autocomplete="off" type="password" placeholder="Password" name="pass" #pass="ngModel"
+              [(ngModel)]="employee.password" required>
+            <div *ngIf="f.submitted && pass.invalid" class="invalid-feedback" >
+                <div *ngIf="pass.errors.required"> Password required </div>
+            </div>  
+        </mat-form-field>
+
+        <div fxflex="100" fxlayout="row wrap" fxLayoutAlign="center center">
+            <button mat-raised-button color="primary"> Login </button>
+        </div>
+    </form>    
+</div>
