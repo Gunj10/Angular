@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ObservablesDemoComponent } from './observables-demo.component';
+import { ObservablesDemoRoutingModule } from './observables-demo-routing.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 
@@ -9,7 +11,9 @@ import { ObservablesDemoComponent } from './observables-demo.component';
     ObservablesDemoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ObservablesDemoRoutingModule,
+    CoreModule
   ]
 })
 export class ObservablesDemoModule { }

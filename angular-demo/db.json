@@ -1,0 +1,69 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "bill",
+      "address": "usa",
+      "phone": "3333",
+      "company": "microsoft",
+      "username": "BILL"
+    },
+    {
+      "name": "mark",
+      "address": "us",
+      "phone": "78546",
+      "company": "fb",
+      "username": "MARK",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "name": "jeff",
+      "address": "usa",
+      "phone": "0999",
+      "company": "amazon",
+      "username": "JEFF"
+    },
+    {
+      "name": "gunj1",
+      "address": "india",
+      "company": "FIS",
+      "phone": "78541",
+      "username": "gunjan",
+      "id": 4
+    },
+    {
+      "name": "ghun",
+      "address": "mdks",
+      "company": "dsdj",
+      "phone": "4762",
+      "username": "1356asds",
+      "id": 5
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "roles": [
+    {
+      "roleId": 10,
+      "name": "manager"
+    },
+    {
+      "roleId": 20,
+      "name": "developer"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
-import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, ElementRef, OnChanges, OnDestroy, OnInit, Query, QueryList, SimpleChanges, ViewChild, ViewChildren } from '@angular/core';
+import { ChildDemoComponent } from './child-demo/child-demo.component';
 
 @Component({
   selector: 'app-parent-demo',
@@ -7,6 +8,18 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 })
 export class ParentDemoComponent implements OnInit, OnChanges, DoCheck, 
        AfterContentInit, AfterContentChecked, AfterViewInit, AfterViewChecked, OnDestroy {
+
+  @ViewChild ('viewChildRef', { static:false }) vRef: ElementRef;
+  @ViewChild ('viewChildRef', { static:true }) vRef2: ElementRef;
+
+  @ViewChild ('viewChildDemoRef', { static:true }) vDemo: ElementRef;
+  @ViewChild (ChildDemoComponent, { static:false}) compRef: ChildDemoComponent;
+
+  @ViewChildren (ChildDemoComponent) multipleRef: QueryList <any>;
+
+  parentVariable: number = 20;
+  outputVariable: number = 30;
+
 
   constructor() { 
     console.log ('Hello from Parent const');
@@ -17,6 +30,10 @@ export class ParentDemoComponent implements OnInit, OnChanges, DoCheck,
     console.log ('Hello from Parent Oninit')
   }
 
+  updateFromChild(event:any){
+    this.outputVariable = event;
+  }
+
   ngOnDestroy(): void {
     console.log ('Hello from Parent ngOnDestroy')
   }
@@ -25,6 +42,9 @@ export class ParentDemoComponent implements OnInit, OnChanges, DoCheck,
   }
   ngAfterViewInit(): void {
     console.log ('Hello from Parent ngAfterViewInit')
+    this.vRef2.nativeElement.style.color = 'blue';
+
+
   }
   ngAfterContentChecked(): void {
     console.log ('Hello from Parent ngAfterContentChecked')

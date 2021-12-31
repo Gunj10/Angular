@@ -8,14 +8,18 @@ import { Employee } from 'src/app/main/models/employee';
 })
 export class LoginComponent implements OnInit {
 
-  employee : Employee = new Employee();
-
   constructor() { }
+
+  employee : Employee = new Employee();
 
   ngOnInit(): void {
   }
 
   onSubmit() {
+    // Assume authentication is done and we have received the token
+    localStorage.clear();
+    localStorage.setItem('access-token', 'testtoken');
+    localStorage.setItem('user-role', 'admin');
 
   }
 }

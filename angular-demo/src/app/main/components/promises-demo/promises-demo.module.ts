@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PromisesDemoComponent } from './promises-demo.component';
+import { PromisesDemoRoutingModule } from './promises-demo-routing.module';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 
@@ -9,7 +11,9 @@ import { PromisesDemoComponent } from './promises-demo.component';
     PromisesDemoComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    PromisesDemoRoutingModule,
+    CoreModule
   ]
 })
 export class PromisesDemoModule { }

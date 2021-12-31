@@ -40,6 +40,14 @@ export class FullLayoutComponent implements OnInit {
     {
       name: 'Service Demo',
       value: 'service-demo'
+    },
+    {
+      name: 'Observable Demo',
+      value: 'observables-demo'
+    },
+    {
+      name: 'Promises Demo',
+      value: 'promises-demo'
     }
 
   ]

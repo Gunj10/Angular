@@ -8,12 +8,14 @@ import { FlexLayoutDemoComponent } from './components/flex-layout-demo/flex-layo
 import { PipesDemoComponent } from './components/pipes-demo/pipes-demo.component';
 import { MaterialDemoComponent } from './components/material-demo/material-demo.component';
 import { TypescriptDemoComponent } from './components/typescript-demo/typescript-demo.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path : 'data-binding-demo',
     // component : DataBindingDemoComponent,
-    loadChildren: () => import('./components/data-binding-demo/data-binding-demo.module').then(x => x.DataBindingDemoModule)
+    loadChildren: () => import('./components/data-binding-demo/data-binding-demo.module').then(x => x.DataBindingDemoModule),
+    canLoad: [AuthGuard]
   },
   { 
     path : 'directives-demo',
@@ -46,8 +48,17 @@ const routes: Routes = [
     loadChildren: () => import('./components/services-demo/services-demo.module').then(x => x.ServicesDemoModule)  
   },
   {
+    path : 'observables-demo',
+    loadChildren: () => import('./components/observables-demo/observables-demo.module').then(x => x.ObservablesDemoModule)  
+  },
+  {
+    path : 'promises-demo',
+    loadChildren: () => import('./components/promises-demo/promises-demo.module').then(x => x.PromisesDemoModule)  
+  },
+  {
     path : 'typescript-demo',
     component : TypescriptDemoComponent,
+    canActivate: [AuthGuard]
   }  
 ]  
 @NgModule({

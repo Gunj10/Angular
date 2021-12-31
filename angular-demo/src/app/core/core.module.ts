@@ -9,7 +9,7 @@ import { DialogOverviewComponent } from './dialog-components/dialog-overview/dia
 import { FormsModule } from '@angular/forms';
 import { ConfirmationComponent } from './dialog-components/confirmation/confirmation.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MyLibraryModule } from 'my-Library';
+// import { MyLibraryModule } from 'my-Library';
 
 const newComponents_directives_pipes = [
   HighlightDirective,
@@ -25,7 +25,7 @@ const modules = [
   MaterialModule,
   FormsModule,
   FlexLayoutModule,
-  MyLibraryModule
+  // MyLibraryModule
 ]
 
 @NgModule({

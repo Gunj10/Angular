@@ -24,6 +24,8 @@ export class TypescriptDemoComponent implements OnInit {
       id: 1,
       name: 'TEST1',
       address: 'Street1',
+      phone: 2580,
+      company: 'agdv',
       username: 'TEST',
       password: 'test1'
     },
@@ -31,6 +33,8 @@ export class TypescriptDemoComponent implements OnInit {
       id: 2,
       name: 'TEST2',
       address: 'Street2',
+      phone: 2580,
+      company: 'agdv',
       username: 'TEST',
       password: 'test1'
     }
